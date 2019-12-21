@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Nunito:200,600);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
@@ -11363,13 +11363,153 @@ a.text-dark:focus {
 
 /*Sidebar*/
 
+body {
+  background-color: #FBFBFF;
+  font-family: "Nunito", sans-serif;
+}
+
+.navbar {
+  height: 60px;
+}
+
+.nav-bar {
+  display: block;
+  position: relative;
+  -webkit-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
+  color: #FBFBFF;
+  width: 270px;
+  height: calc(100vh - 60px);
+  background-color: #101010;
+}
+
+.nav-bar .title {
+  display: block;
+  margin-top: 80px;
+  margin-left: -10px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 48px;
+  text-align: center;
+}
+
+.nav-bar #title-text {
+  display: inline-block;
+}
+
+.nav-bar #box {
+  display: inline-block;
+  position: absolute;
+  margin-left: 5px;
+  border-radius: 1px;
+  bottom: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #f8b500;
+}
+
+.nav-bar .nav-item-list {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80%;
+  min-height: 100px;
+}
+
+.nav-item {
+  display: inline-block;
+  position: relative;
+  min-width: 90px;
+  min-height: 35px;
+  padding-top: 5px;
+  box-sizing: border-box;
+  font-size: 20px;
+  margin: 20px 10px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.nav-item .item-text {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+  supported by Chrome and Opera */
+  display: inline-block;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  opacity: 0.2;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item:hover .item-text {
+  left: 20px;
+  bottom: 2px;
+}
+
+.nav-item .selected {
+  opacity: 1 !important;
+}
+
+.nav-item .hovered {
+  opacity: 0.8 !important;
+}
+
+.nav-item .menu-hovered {
+  opacity: 0.4;
+}
+
+#indicator {
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 10px;
+  top: 33px;
+  border-radius: 3px;
+  background-color: #f8b500;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  /* no underline */
+}
+
+.credit {
+  display: block;
+  position: absolute;
+  font-size: 18px;
+  bottom: 40px;
+  right: 40px;
+}
+
+.credit a {
+  color: #FF3065;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
 #sidebar-wrapper {
   z-index: 1;
   position: absolute;
-  width: 0;
-  height: 100%;
+  width: 270px;
   overflow-y: hidden;
-  background: #bdbebd;
   opacity: 0.9;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -11389,48 +11529,11 @@ a.text-dark:focus {
   transition: all 0.5s;
 }
 
-#menu-toggle {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  font-size: 2em;
-}
-
-/* Change the width of the sidebar to display it*/
-
 #wrapper.menuDisplayed #sidebar-wrapper {
-  width: 250px;
+  width: 270px;
 }
 
 #wrapper.menuDisplayed #page-content-wrapper {
-  padding-left: 250px;
-}
-
-/* Sidebar styling */
-
-.sidebar-nav {
-  padding: 0;
-  list-style: none;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  width: 100%;
-  text-align: center;
-}
-
-.sidebar-nav li {
-  line-height: 40px;
-  width: 100%;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  padding: 10px;
-}
-
-.sidebar-nav li a {
-  display: block;
-  text-decoration: none;
-  color: black;
-}
-
-.sidebar-nav li:hover {
-  background: #a9a9a9;
+  padding-left: 270px;
 }
 

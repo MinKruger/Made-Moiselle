@@ -76,35 +76,20 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
-            <div id="wrapper">
-                <!-- Sidebar -->
-                <div id="sidebar-wrapper">
-                    <ul class="sidebar-nav">
-                        <li><a class="nav-link" href="{{ route('dashboard.index') }}">Home</a></li>
-                        <li><a class="nav-link" href="{{ route('clients.index') }}">Clientes</a></li>
-                        <li><a class="nav-link" href="{{ route('procedures.index') }}">Procedimentos</a></li>
-                        <li><a class="nav-link" href="{{ route('schedule.index') }}">Agenda</a></li>
-                        <li><a class="nav-link" href="{{ route('profiles.edit', Auth::id()) }}">Editar Perfil</a></li>
-                    </ul>
-                </div>
-
-                <!-- Page Content -->
-                <div id="page-content-wrapper">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <a href="#" class="btn btn-primary" id="menu-toggle"><span
-                                        class="glyphicon glyphicon-menu-hamburger"></span></a>
-                                @yield('content')
-                            </div>
+        <div id="wrapper">
+            <div id="sidebar-wrapper">
+                @include('layouts.sidebar')
+            </div>
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @yield('content')
                         </div>
                     </div>
                 </div>
             </div>
-
-        </main>
+        </div>
     </div>
 </body>
 
