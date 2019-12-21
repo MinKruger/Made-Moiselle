@@ -11361,3 +11361,76 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+/*Sidebar*/
+
+#sidebar-wrapper {
+  z-index: 1;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  overflow-y: hidden;
+  background: #bdbebd;
+  opacity: 0.9;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+/* Main Content */
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#menu-toggle {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 2em;
+}
+
+/* Change the width of the sidebar to display it*/
+
+#wrapper.menuDisplayed #sidebar-wrapper {
+  width: 250px;
+}
+
+#wrapper.menuDisplayed #page-content-wrapper {
+  padding-left: 250px;
+}
+
+/* Sidebar styling */
+
+.sidebar-nav {
+  padding: 0;
+  list-style: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 10px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar-nav li:hover {
+  background: #a9a9a9;
+}
+
