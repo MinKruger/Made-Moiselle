@@ -1,78 +1,80 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Desafio I - Orientação a objetos
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Instalando o projeto
+O projeto utiliza a arquitetura MVC.
+A princípio tentei fazer o projeto em ASP.NET MVC mas ao iniciar os estudos, mesmo entendendo que é bem parecido com Laravel 6.0 ví que não teria prazo suficiente, por isso decidi trocar com algo que mesmo não conhecendo tão profundamente, tenho conhecimento maior que em C# e conseguiria realizar os testes sem muitos problemas.
 
-## About Laravel
+Foi utilizado 
+* PHP 7.2 Orientado a Objetos.
+* Laravel 6.0
+* Apache 2
+* Eloquent ORM
+> O banco de dados não importa muito, postgres, mysql, **SQL Server** etc. O Laravel utiliza um sistema de migrations que eu escrevo o código e ele converte para o BD que estiver setado utilizando um pacote interno.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Para instalar o projeto
+> Se estiver em ambiente **Windows** baixe o applicativo **Laragon** Ele irá cuidar do Apache, PHP e Extensões necessárias além do BD. Após instalar ele apenas precisará instalar o Composer para poder ter acesso ao gerenciador de dependências do PHP.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+> Se estiver em Ambiente macOS, pode usar o **Homestead** ou o **Valet**.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+> Se seu ambiente for Linux, precisará instalar tudo na mão ou subir um container **Docker** configurado com os requisitos.
 
-## Learning Laravel
+> Após instalar o projeto basta configurar o arquivo **.env** no root da pasta do projeto.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* > DB_HOST=127.0.0.1
+* > DB_PORT=porta_do_banco
+* > DB_DATABASE=nome_do_banco
+* > DB_USERNAME=root
+* > DB_PASSWORD=
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+> Então rodar os seguintes comandos:
+* > composer install **Instala as depedências**
+* > php artisan migrate:fresh **Zera o BD e o reescreve.**
 
-## Laravel Sponsors
+> após abrir o projeto no virtualhost criado para ele. **Obs: Apontar para a pasta public/.**
+## O que foi feito
+Me baseando no que foi pedido:
+* **Contexto**
+>Sistema básico para cruds de uma aplicação para clínica estética.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+* **organização lógica** 
+> Aqui o mérito é do Laravel e sua organização fantástica, seguindo o MVC, defini as models que se correlacionam com as migrations, as controllers para fazer as operações e conversar com as models, e as views para o usuário poder navegar.
+* **modelagem dos dados**
+> Aqui eu defini as seguintes models. **Procedure**, **Client**, **Schedule**. E elas conectam as respectivas tabelas, se relacionando. Posso cadastrar separadamente Procedimentos e Clientes, e Posso fazer um agendamento com uma tabela intermediária ManyToMany para colocar os id's de cada entidade e o horário do agendamento. Fiz um update onde podemos atualizar o agendamento também. Infelizmente não consegui tempo suficiente para estudar uma forma de retornar uma mensagem de sucesso ou de falha, a pagina atualiza e eu removo o botão, talvez poderia fazer um css, mudar uma cor ou algo assim, mas o tempo estava curto. :/
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+* **domínio da linguagem**
+> Aqui basicamente eu usei documentação. E padrões "Right Way". Não tenho domínio completo com PHP, meu maior domínio é com C.
+* **facilidade de manutenção**.
+> Aqui o mérito também vem do Laravel. Mexemos em 3, 4 arquivos e qualquer alteração está pronta.
 
-## Contributing
+## Fluxo feliz da aplicação.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* Entrar no domínio.
+* Cadastrar um usuário em Registre-se.
+* Fazer login.
+* Você irá cair na página de dashboard onde propositalmente tem uma piadinha hehe
+* Efetuar os cadastros, as operações CRUD estão todas feitas.
+* Criar agendamentos.
+* ~~Me aprovar~~.
 
-## Code of Conduct
+# Desafio II - Banco de dados
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Como foi feito?
+Estudei as queries básicas para poder executar.
+Instalei o **SQL Server** e utilizei o **SGBD HeidSQL** para escrever as queries e entender o que acontecia.
 
-## Security Vulnerabilities
+## Detalhes
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+* Primeiro abrir o arquivo company para criar o database, juntos das tabelas e da **alter table**.
 
-## License
+> **OBS:** Excluir o drop para rodar o banco a primeira vez, caso der erro utilizar o drop novamente.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* Segundo abrir o arquivo inserts e rodar primeiro departamento, depois utilizar **select * from departamento** para utilizar os id's incrementados no insert de funcionario, e repetir o mesmo processo usando **select * from funcionario** para atribuir a tabela dependente.
+
+* Tendo feito todos os inserts apenas chamar os selects selecionando um de cada vez e **voalá ;)**
+
+# Desafio III - Lógica de programação
+
+## Como foi feito?
+Foi relativamente simples. As lógicas são tranquilas, exceto pelo 3 exercício que eu não sabia quase nada das funções de C# para fazer o split, para comparar. C# é fortemente tipado então tive vários erros que eu não teria com uma linguagem fracamente tipada que aceita tudo.
+
+> Como compilador usei o site https://dotnetfiddle.net
