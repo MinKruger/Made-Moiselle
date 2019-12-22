@@ -12,14 +12,11 @@ Route::prefix('home')->group( function () {
 });
 
 /** Schedule */
-Route::prefix('schedule')->group( function () {
-    Route::get('', 'ScheduleController@index')->name('schedule.index');
-    Route::get('create', 'ScheduleController@create')->name('schedule.create');
-    Route::post('store', 'ScheduleController@store')->name('schedule.store');
-    Route::get('show/{id}', 'ScheduleController@show')->name('schedule.show');
-    Route::get('edit/{id}', 'ScheduleController@edit')->name('schedule.edit');
-    Route::post('update/{id}', 'ScheduleController@update')->name('schedule.update');
-    Route::get('delete/{id}', 'ScheduleController@destroy')->name('schedule.destroy');
+Route::prefix('schedules')->group( function () {
+    Route::get('', 'ScheduleController@index')->name('schedules.index');
+    Route::get('create', 'ScheduleController@create')->name('schedules.create');
+    Route::post('store', 'ScheduleController@store')->name('schedules.store');
+    Route::get('finished/{id}', 'ScheduleController@finished')->name('schedules.finished');
 });
 
 /** Clients */
